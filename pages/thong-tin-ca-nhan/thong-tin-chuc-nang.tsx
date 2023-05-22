@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { NavbarPage } from "@/components/navbar/navbar";
 import HeaderPage from "@/components/header/header";
+import NavFooter from "@/components/navbar/footer";
 import {
   AppShell,
-  Navbar,
   Header,
-  Footer,
-  Aside,
   Text,
   MediaQuery,
-  Burger,
   useMantineTheme,
   createStyles,
-  rem,
+  Footer,
   Group,
   SimpleGrid,
   Avatar,
@@ -31,27 +28,15 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: "10px",
-    color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
   },
-
-  cols: {
-    border: theme.colors.dark,
+  paper: {
+    ...theme.fn.hover({
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
+    }),
   },
-
-  //   hiddenMobile: {
-  //     [theme.fn.smallerThan("sm")]: {
-  //       display: "inline-block",
-  //       width: "",
-  //     },
-  //   },
-  //   hiddenDesktop: {
-  //     [theme.fn.largerThan("sm")]: {
-  //       display: "none",
-  //     },
-  //   },
 }));
 
 const ThongTinChucNang = () => {
@@ -62,48 +47,32 @@ const ThongTinChucNang = () => {
   return (
     <>
       <AppShell
-        styles={{
-          main: {
-            background:
-              theme.colorScheme === "dark"
-                ? theme.colors.dark[8]
-                : theme.colors.gray[0],
-          },
-        }}
         navbarOffsetBreakpoint="sm"
-        // asideOffsetBreakpoint="sm"
         navbar={
           <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
             <NavbarPage />
           </MediaQuery>
         }
-        // aside={
-        //   <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-        //     <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-        //       <Text>Application sidebar</Text>
-        //     </Aside>
-        //   </MediaQuery>
-        // }
-        // footer={
-        //   <Footer height={60} p="md">
-        //     Application footer
-        //   </Footer>
-        // }
+        footer={
+          <MediaQuery largerThan="sm" styles={{ display: "none" }}>
+            <Footer height={{ base: 50, md: 60 }} p="md">
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
+                <NavFooter />
+              </div>
+            </Footer>
+          </MediaQuery>
+        }
         header={
           <Header height={{ base: 50, md: 60 }} p="md">
             <div
               style={{ display: "flex", alignItems: "center", height: "100%" }}
             >
-              <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-                <Burger
-                  opened={opened}
-                  onClick={() => setOpened((o) => !o)}
-                  size="sm"
-                  color={theme.colors.gray[6]}
-                  mr="xl"
-                />
-              </MediaQuery>
-
               <HeaderPage />
             </div>
           </Header>
@@ -120,16 +89,28 @@ const ThongTinChucNang = () => {
             />
           </Center>
           <Text pt="lg">
-            Xin chào <b>Dương Nguyễn Phú Cường</b>
+            Xin chào{" "}
+            <Text display={"inline"} fw={700}>
+              Dương Nguyễn Phú Cường
+            </Text>
           </Text>
           <Text>
-            Vai trò: <b>Trưởng nhóm G2B</b>
+            Vai trò:{" "}
+            <Text display={"inline"} fw={700}>
+              Trưởng nhóm G2B
+            </Text>
           </Text>
         </Group>
         <MediaQuery smallerThan="sm" styles={{ display: "block" }}>
           <SimpleGrid cols={3}>
-            <Paper shadow="sm" radius="md" p="md" mb="xs">
-              <Text tt={"uppercase"} ta={"center"}>
+            <Paper
+              className={classes.paper}
+              shadow="sm"
+              radius="md"
+              p="md"
+              mb="xs"
+            >
+              <Text tt={"uppercase"} ta={"center"} fw={700}>
                 Danh sách chức năng trong ngày
               </Text>
               <ul>
@@ -142,8 +123,14 @@ const ThongTinChucNang = () => {
                 <li>Submit a pull request once you are done</li>
               </ul>
             </Paper>
-            <Paper shadow="sm" radius="md" p="md" mb="xs">
-              <Text tt={"uppercase"} ta={"center"}>
+            <Paper
+              shadow="sm"
+              radius="md"
+              p="md"
+              mb="xs"
+              className={classes.paper}
+            >
+              <Text tt={"uppercase"} ta={"center"} fw={700}>
                 Danh sách chức năng cuối tháng
               </Text>
 
@@ -157,8 +144,14 @@ const ThongTinChucNang = () => {
                 <li>Submit a pull request once you are done</li>
               </ul>
             </Paper>
-            <Paper shadow="sm" radius="md" p="md" mb="xs">
-              <Text tt={"uppercase"} ta={"center"}>
+            <Paper
+              shadow="sm"
+              radius="md"
+              p="md"
+              mb="xs"
+              className={classes.paper}
+            >
+              <Text tt={"uppercase"} ta={"center"} fw={700}>
                 Danh sách chức năng trong năm
               </Text>
 

@@ -179,17 +179,17 @@ const HeaderPage = () => {
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
-                    {/* <Box component="span" mr={5}> */}
-                    Features
-                    {/* </Box> */}
-                    {/* <IconChevronDown
+                    <Box component="span" mr={5}>
+                      Features
+                    </Box>
+                    <IconChevronDown
                       size={16}
                       color={theme.fn.primaryColor()}
-                    /> */}
+                    />
                   </Center>
                 </a>
               </HoverCard.Target>
-              {/* 
+
               <HoverCard.Dropdown sx={{ overflow: "hidden" }}>
                 <Group position="apart" px="md">
                   <Text fw={500}>Features</Text>
@@ -221,7 +221,7 @@ const HeaderPage = () => {
                     <Button variant="default">Get started</Button>
                   </Group>
                 </div>
-              </HoverCard.Dropdown> */}
+              </HoverCard.Dropdown>
             </HoverCard>
             <a href="#" className={classes.link}>
               Learn
@@ -247,47 +247,47 @@ const HeaderPage = () => {
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
-        size="100%"
+        size="50%"
         padding="md"
         title="Navigation"
         className={classes.hiddenDesktop}
         zIndex={1000000}
       >
-        <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
-          <Divider
-            my="sm"
-            color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
-          />
+        {/* <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md"> */}
+        <Divider
+          my="sm"
+          color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
+        />
 
-          <a href="#" className={classes.link}>
-            Home
-          </a>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
-            <Center inline>
-              <Box component="span" mr={5}>
-                Features
-              </Box>
-              <IconChevronDown size={16} color={theme.fn.primaryColor()} />
-            </Center>
-          </UnstyledButton>
-          <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
-            Learn
-          </a>
-          <a href="#" className={classes.link}>
-            Academy
-          </a>
+        <a href="#" className={classes.link}>
+          Home
+        </a>
+        <UnstyledButton className={classes.link} onClick={toggleLinks}>
+          <Center inline>
+            <Box component="span" mr={5}>
+              Features
+            </Box>
+            <IconChevronDown size={16} color={theme.fn.primaryColor()} />
+          </Center>
+        </UnstyledButton>
+        <Collapse in={linksOpened}>{links}</Collapse>
+        <a href="#" className={classes.link}>
+          Learn
+        </a>
+        <a href="#" className={classes.link}>
+          Academy
+        </a>
 
-          <Divider
-            my="sm"
-            color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
-          />
+        <Divider
+          my="sm"
+          color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
+        />
 
-          <Group position="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
-        </ScrollArea>
+        <Group position="center" grow pb="xl" px="md">
+          <Button variant="default">Log in</Button>
+          <Button>Sign up</Button>
+        </Group>
+        {/* </ScrollArea> */}
       </Drawer>
     </Box>
   );
