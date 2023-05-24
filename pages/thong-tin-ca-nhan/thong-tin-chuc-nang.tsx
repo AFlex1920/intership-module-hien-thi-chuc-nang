@@ -17,6 +17,7 @@ import {
   Paper,
   List,
 } from "@mantine/core";
+import ChucNang from "@/components/chucnang/chucnang";
 
 const useStyles = createStyles((theme) => ({
   infoPerson: {

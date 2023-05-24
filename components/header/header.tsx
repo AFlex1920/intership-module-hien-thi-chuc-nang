@@ -155,9 +155,10 @@ const HeaderPage = () => {
       </Group>
     </UnstyledButton>
   ));
+
   return (
     <Box pb={120}>
-      <Header height={60} px="md">
+      <Header height={{ base: 50, md: 60 }} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
           <MantineLogo size={30} />
 

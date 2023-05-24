@@ -7,7 +7,6 @@ import {
   Footer,
   Tooltip,
   UnstyledButton,
-  Stack,
 } from "@mantine/core";
 import {
   IconHome2,
