@@ -5,9 +5,9 @@ export default function NhomChucNang() {
 
   return (
     <>
-      <button className="text-white py-1 px-2 rounded-full bg-blue-500 mb-3">
+      {/* <button className="text-white py-1 px-2 rounded-full bg-blue-500 mb-3">
         Lựa chọn nhóm chức năng
-      </button>
+      </button> */}
       <ChucNang />
     </>
   );

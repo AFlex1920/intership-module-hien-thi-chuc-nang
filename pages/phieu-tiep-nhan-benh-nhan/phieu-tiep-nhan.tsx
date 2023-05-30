@@ -1,26 +1,20 @@
-import { useState } from "react";
+import { Children, useState } from "react";
 import { NavbarPage } from "@/components/navbar/navbar";
 import HeaderPage from "@/components/header/header";
 import NavFooter from "@/components/navbar/footer";
-import NhomChucNang from "@/components/nhom-chuc-nang/lua-chon-nhom-chuc-nang";
+import Split from "react-split";
+import React from "react";
+import leftSidebar from "./components/left-sidebar/left-sidebar";
 
 import {
   AppShell,
   Header,
-  Text,
   MediaQuery,
   useMantineTheme,
   createStyles,
   Footer,
-  Group,
-  SimpleGrid,
-  Avatar,
-  Center,
-  Paper,
   Grid,
-  List,
 } from "@mantine/core";
-import ChucNang from "@/components/chucnang/chucnang";
 
 const useStyles = createStyles((theme) => ({
   infoPerson: {
@@ -82,16 +76,11 @@ const ThaoTacChucNang = () => {
           </Header>
         }
       >
-        {/* <h1 className="text-center pb-4 font-medium">Chức năng</h1> */}
-        <Grid>
-          <Grid.Col span={12}>
-            <div className="relative border-sky-500">
-              <div className="absolute h-full w-full">
-                <NhomChucNang />
-              </div>
-            </div>
-          </Grid.Col>
-        </Grid>
+        <leftSidebar></leftSidebar>
+        <Split className="split">
+          <div>main</div>
+          <div>right-sidebar</div>
+        </Split>
       </AppShell>
     </>
   );

@@ -2,3 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+.MyDragHandleClassName {
+    cursor: pointer;
+    /* height: 40px; */
+    display: inline;
+    line-height: 38px;
+    /* background: #61dafb; */
+    max-height: 480x;
+}
+
+.react-grid-layout {
+    border: 1px solid red;
+    width: 100%;
+    padding-bottom: 30px !important;    
+    /* background-color: beige; */
+    /* height: 200px !important; */
+    margin-bottom: 20px;
+}
+
+.react-grid-item {
+    background-color: lavender;
+    height: fit-content;
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+}
+
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
