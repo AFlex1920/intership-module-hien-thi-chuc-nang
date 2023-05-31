@@ -24,10 +24,13 @@
     background-color: lavender;
     height: fit-content;
 }
-
 .split {
     display: flex;
+    height: 100vh;
     flex-direction: row;
+    font-size: x-small;
+    padding: 1px;
+    border-radius: 5px;
 }
 
 .gutter {
@@ -39,4 +42,14 @@
 .gutter.gutter-horizontal {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
     cursor: col-resize;
+}
+
+.mantine-Radio-root {
+    width: 1px !important;
+    height: 1px !important;
+}
+
+.mantine-Radio-radio .mantine-Radio-label {
+    width: 1px !important;
+    height: 1px !important;
 }

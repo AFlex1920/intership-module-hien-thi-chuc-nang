@@ -2,9 +2,11 @@ import { Children, useState } from "react";
 import { NavbarPage } from "@/components/navbar/navbar";
 import HeaderPage from "@/components/header/header";
 import NavFooter from "@/components/navbar/footer";
-import Split from "react-split";
 import React from "react";
-import leftSidebar from "./components/left-sidebar/left-sidebar";
+import LeftSidebar from "@/components/components-phieu-tiep-nhan-benh-nhan/left-sidebar/left-sidebar";
+import MainContent from "@/components/components-phieu-tiep-nhan-benh-nhan/main/main";
+import RightSidebar from "@/components/components-phieu-tiep-nhan-benh-nhan/right-sidebar/right-sidebar";
+import Split from "react-split";
 
 import {
   AppShell,
@@ -15,6 +17,7 @@ import {
   Footer,
   Grid,
 } from "@mantine/core";
+import { Main } from "next/document";
 
 const useStyles = createStyles((theme) => ({
   infoPerson: {
@@ -38,10 +41,6 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const ThaoTacChucNang = () => {
-  const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
-  const { classes } = useStyles();
-
   return (
     <>
       <AppShell
@@ -53,7 +52,7 @@ const ThaoTacChucNang = () => {
         }
         footer={
           <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-            <Footer height={{ base: 50, md: 60 }} p="md">
+            <Footer height={{ base: 50, sm: 0 }} p="md">
               <div
                 style={{
                   display: "flex",
@@ -76,10 +75,16 @@ const ThaoTacChucNang = () => {
           </Header>
         }
       >
-        <leftSidebar></leftSidebar>
-        <Split className="split">
-          <div>main</div>
-          <div>right-sidebar</div>
+        <Split className="split" minSize={50}>
+          <div className="w-1/6">
+            <LeftSidebar />
+          </div>
+          <div className="w-4/6">
+            <MainContent />
+          </div>
+          <div className="w-1/6">
+            <RightSidebar />
+          </div>
         </Split>
       </AppShell>
     </>
