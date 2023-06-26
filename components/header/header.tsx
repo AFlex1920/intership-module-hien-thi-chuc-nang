@@ -234,7 +234,7 @@ const HeaderPage = () => {
 
           <Group className={classes.hiddenMobile}>
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="outline">Sign up</Button>
           </Group>
 
           <Burger
@@ -286,7 +286,7 @@ const HeaderPage = () => {
 
         <Group position="center" grow pb="xl" px="md">
           <Button variant="default">Log in</Button>
-          <Button>Sign up</Button>
+          <Button variant="outline">Sign up</Button>
         </Group>
         {/* </ScrollArea> */}
       </Drawer>

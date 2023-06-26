@@ -26,9 +26,16 @@
 }
 .split {
     display: flex;
-    height: 100vh;
     flex-direction: row;
-    font-size: x-small;
+    border-radius: 5px;
+    height: 100vh;
+}
+
+.split-1 {
+    display: flex;
+    /* height: calc(100vh-50px); */
+    height: calc(100vh - 58px);
+    flex-direction: column;
     padding: 1px;
     border-radius: 5px;
 }
@@ -44,12 +51,24 @@
     cursor: col-resize;
 }
 
-.mantine-Radio-root {
-    width: 1px !important;
-    height: 1px !important;
+.gutter.gutter-vertical {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+    cursor: row-resize;
 }
 
-.mantine-Radio-radio .mantine-Radio-label {
-    width: 1px !important;
-    height: 1px !important;
+.maincontent {
+    height: calc(100vh - 25px);
 }
+
+.cong-kham {
+    min-height: 250px;
+    max-height: 250px;
+}
+.phong-kham {
+    min-height: 300px;
+    max-height: 350px;
+}
+
+
+
+
